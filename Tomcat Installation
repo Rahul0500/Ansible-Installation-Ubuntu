@@ -1,0 +1,21 @@
+#EXECUTE BELOW COMMAND IN /opt FOLDER
+   wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.zip
+
+#UNZIP THE apache-tomcat-9.0.78.zip FILE
+   unzip apache-tomcat-9.0.78.zip
+
+#GO TO THE apache-tomcat-9.0.78 FILE 
+   cd /apache-tomcat-9.0.78/bin
+
+#NOW WE HAVE TO GIVE THE PERMISSION TO START TOMCAT
+   chmod u+x *.sh  
+
+#NOW WE CAN START TOMCAT SERVER
+   sh startup.sh 
+
+#NOW WE HAVE TO EDIT THE FILE context.xml JUST ADD COMMIT TO THE LINES 
+   vi apache-tomcat-9.0.74/webapps/manager/META-INF/context.xml 
+   <!--      
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+        allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
