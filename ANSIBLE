@@ -1,0 +1,54 @@
+ANSIBLE INSTALLATION UBUNTU
+
+
+#FIRST WE HAVE TO ADD USERADD IN UBUNTU USER
+   
+     sudo adduser ansible
+  
+#WE HAVE TO GO TO THE SUDOERS AND EDIT AUNTHENTICATION 
+    
+     vi /etc/sudoers
+  
+     ansible ALL=(ALL) NOPASSWD: ALL
+
+#AND THEN WE HAVE TO CHANGE THE USERADD
+
+     su ansible
+
+#NOW INSTALL THE ANSIBLE PACKAGES
+
+     sudo apt update
+   
+     sudo apt install software-properties-common
+
+     sudo add-apt-repository --yes --update ppa:ansible/ansible
+
+     sudo apt install ansible
+    
+#WE HAVE TO ADD THE NODE GROUP IP ADDRESS IN HOSTS
+
+     sudo vi /etc/ansible/hosts
+
+#https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg 
+ COPY THE TEXT AND PASTE IT IN ANSIBLE.CFG
+
+     sudo  vi /etc/ansible/ansible.cfg
+
+#WE HAVE TO ADD PEM KEY IN NEW FILE FROM OUR LOCAL PEM KEY
+
+     sudo vi ~/demo.pem
+
+#WE HAVE TO GIVE READ ONLY PERMISSION FOR PEM KEY
+
+     chmod 400 demo.pem
+
+#WE HAVE TO OPEN HOSTS FILE AND EDIT IT SSH KEY
+
+      sudo vi /etc/ansible/hosts 
+
+      172.31.47.43 ansible_user=ubuntu ansible_ssh_private_key_file=~/demo.pem
+
+#AND THEN NOW PING THE ANSIBLE
+
+       ansible all -m ping
+
