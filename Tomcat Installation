@@ -13,9 +13,24 @@
 #NOW WE CAN START TOMCAT SERVER
    sh startup.sh 
 
-#NOW WE HAVE TO EDIT THE FILE context.xml JUST ADD COMMIT TO THE LINES 
-   vi apache-tomcat-9.0.74/webapps/manager/META-INF/context.xml 
+#NOW WE HAVE TO EDIT THE FILE context.xml JUST ADD COMMIT TO THE LINES FOR manager
+   cd apache-tomcat-9.0.74/webapps/manager/META-INF/
+   vi context.xml
    <!--      
   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 -->
+
+#NOW WE HAVE TO EDIT THE FILE context.xml JUST ADD COMMIT TO THE LINES FOR host-manager
+   cd apache-tomcat-9.0.74/webapps/host-manager/META-INF/
+   vi context.xml
+    <!--      
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+        allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+#WE HAVE TO EDIT tomcat-users.xml FILE FOR USERNAME AND PASSWORD
+   cd apache-tomcat-9.0.74/conf
+   vi tomcat-users.xml
+   <user username="admin" password="password" roles="manager-gui,admin-gui"/>
+#OPEN THE TOMCAT SERVER
