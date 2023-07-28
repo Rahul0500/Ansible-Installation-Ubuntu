@@ -1,6 +1,5 @@
-ANSIBLE INSTALLATION UBUNTU
-
-
+ANSIBLE INSTALLATION FOR UBUNTU
+-------------------------------
 #FIRST WE HAVE TO ADD USERADD IN UBUNTU USER
    
      sudo adduser ansible
@@ -46,7 +45,7 @@ ANSIBLE INSTALLATION UBUNTU
 
       sudo vi /etc/ansible/hosts 
 
-      172.31.47.43 ansible_user=ubuntu ansible_ssh_private_key_file=~/demo.pem
+      GIVE YOUR NODE IP ADDRESS(172.31.47.43) ansible_user=ubuntu ansible_ssh_private_key_file=~/demo.pem
 
 #AND THEN NOW PING THE ANSIBLE
 
