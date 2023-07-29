@@ -54,6 +54,12 @@ kubectl get nodes
 
 
 Then our kubernetes cluster will be ready.
+
+# kubectl get node
+The connection to the server 172.31.12.142:6443 was refused - did you specify the right host or port?
+
+Again run 
+export KUBECONFIG=/etc/kubernetes/admin.conf
  
 
  
