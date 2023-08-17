@@ -6,7 +6,7 @@ ANSIBLE INSTALLATION FOR UBUNTU
   
 #WE HAVE TO GO TO THE SUDOERS AND EDIT AUNTHENTICATION 
     
-     vi /etc/sudoers
+    sudo vi /etc/sudoers
   
      ansible ALL=(ALL) NOPASSWD: ALL
 
